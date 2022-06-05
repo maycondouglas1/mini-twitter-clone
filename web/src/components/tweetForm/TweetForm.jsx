@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../button/Button";
 
 const TweetForm = () => {
   const MAX_TWEET_CHAR = 250
@@ -30,12 +31,7 @@ const TweetForm = () => {
             <span>{text.length}</span> /{" "}
             <span className="text-birdBlue">{MAX_TWEET_CHAR}</span>
           </span>
-          <button
-            disabled={text.length > MAX_TWEET_CHAR}
-            className="bg-birdBlue px-5 py-2 rounded-full disabled:opacity-50"
-          >
-            Tweet
-          </button>
+          <Button text={text}>Tweetar</Button>
         </div>
       </form>
     </div>

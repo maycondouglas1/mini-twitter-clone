@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Tweet from './components/tweet/Tweet';
 import TweetForm from './components/tweetForm/TweetForm';
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
 
 const App = () => {
+  const [user, setUser] = useState("")
+
   return (
     <div>
-      <TweetForm />
-      <Tweet name="Elon Musk" username="elonmusk" avatar="/src/images/avatar.png">
-        Primeiro post do twitter clone!
-      </Tweet>
+      {user ? <Home /> : <Login signInUser={setUser}/>}
     </div>
   );
 };
